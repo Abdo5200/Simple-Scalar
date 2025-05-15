@@ -1,0 +1,4 @@
+#!/bin/sh
+# GCC was configured as follows:
+../gcc-2.7.2.3/configure --target=sslittle-na-sstrix --prefix=/home/abdelrahman/Downloads/SimpleScalar/install --enable-languages=c,c++
+echo host=sslittle-na-sstrix target=sslittle-na-sstrix build=sslittle-na-sstrix

@@ -1,0 +1,11 @@
+#!/bin/bash
+# Process arguments to remove -EL
+args=()
+for arg in "$@"; do
+  if [ "$arg" != "-EL" ]; then
+    args+=("$arg")
+  fi
+done
+
+# Run the original assembler with the filtered arguments
+exec /home/abdelrahman/Downloads/SimpleScalar/bin/sslittle-na-sstrix-as.orig "${args[@]}"
