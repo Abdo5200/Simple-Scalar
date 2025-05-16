@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/5141b565-d82d-4ed8-957a-1ab50b6b03d9)## Table of Contents
+## Table of Contents
 - [Course Name](#course-name)
 - [Acknowledgement](#acknowlegment)
 - [Team Members](#team-members)
