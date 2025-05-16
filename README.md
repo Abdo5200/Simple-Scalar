@@ -1,4 +1,4 @@
-## Table of Contents
+![image](https://github.com/user-attachments/assets/5141b565-d82d-4ed8-957a-1ab50b6b03d9)## Table of Contents
 - [Course Name](#course-name)
 - [Acknowledgement](#acknowlegment)
 - [Team Members](#team-members)
@@ -421,30 +421,36 @@ stat_reg_counter(sdb, "committed_backward_not_taken", "number of committed backw
 
 ### 1. static prediction (`backward taken and forward not taken`) stats 
 
-![photo_5850719989982677735_y](https://github.com/user-attachments/assets/d18b847a-87ba-4c32-bb91-8ef64c42dffd)
 ![image](https://github.com/user-attachments/assets/1a32d79a-6aef-4113-8f8d-95c5fd2c8543)
 
 ### 2. Bimod prediction (`2-bit prediction`) using 2048 table entry size (default size)  
 using `2-bit-prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
 
-![e4c243ce-e76d-47fb-a156-71a98ee28ce6](https://github.com/user-attachments/assets/71facdc3-2c1f-4025-81d2-32de26025e5f)
+![image](https://github.com/user-attachments/assets/a69c8e98-0612-4cac-9932-5f448933a989)
+
 
 ### 3. Bimod (`2-bit prediction`) Prediction using 16384 table entry size
 increasing table entry size => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
 
-![dc7e73af-e753-4a6c-8fee-c2045e97a8c8](https://github.com/user-attachments/assets/8cbcee94-6478-417b-baec-cebd3ec28520)
+![image](https://github.com/user-attachments/assets/43f5b8c9-9825-480a-8580-5a355a5103ec)
+
 
 ### 4. 2lev (`correlating`) prediction using default value 1 register , 1024 entry table , 8 bits , 0 (`xor`)
 using `correlating prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
 
-![photo_5850719989982677736_y](https://github.com/user-attachments/assets/a6d21d44-c18a-466e-91c2-f0fcc3182864)
+![image](https://github.com/user-attachments/assets/6fba837b-4047-46e9-8843-e744fd95526f)
+
 
 ### 5. 2lev (`correlating`) prediction using default value 1 register , 1024 entry table , 10 bits , 1 (`xor`)
 increasing number of bit => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
 
-![7404cabc-0ff3-4f35-9b4b-45a6e6f1dfe7](https://github.com/user-attachments/assets/247c06b5-5ad4-4124-b786-7003c7f48995)
+![image](https://github.com/user-attachments/assets/bc966494-ab5e-4ea7-a28e-80605c125480)
+
 
 ### 6. 2lev (`correlating`) prediction using default value 1 register , 4096 entry table , 11 bits , 1 (`xor`)
 the best perfomance and accuracy with inceased table entry size and increased bits.   
+
+![image](https://github.com/user-attachments/assets/235c19ed-44c2-43dd-ae81-4cd270173331)
+
 
 ![84df0701-95db-4b2e-94f0-c9753f0bb69f (1)](https://github.com/user-attachments/assets/2f8c5717-40d6-4b45-aa51-feb9597f6ad0)
