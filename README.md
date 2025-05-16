@@ -448,7 +448,7 @@ increasing number of bit => decreased mispredictions, increased hit predictions,
 ![image](https://github.com/user-attachments/assets/bc966494-ab5e-4ea7-a28e-80605c125480)
 
 
-### 6. 2lev (`correlating`) prediction using default value 1 register , 4096 entry table , 11 bits , 1 (`xor`)
+### 6. 2lev (`correlating`) prediction using 1 register , 4096 entry table , 11 bits , 1 (`xor`)
 the best perfomance and accuracy with inceased table entry size and increased bits.   
 
 ![image](https://github.com/user-attachments/assets/235c19ed-44c2-43dd-ae81-4cd270173331)
