@@ -422,6 +422,7 @@ stat_reg_counter(sdb, "committed_backward_not_taken", "number of committed backw
 ### 1. static prediction (`backward taken and forward not taken`) stats 
 
 ![photo_5850719989982677735_y](https://github.com/user-attachments/assets/d18b847a-87ba-4c32-bb91-8ef64c42dffd)
+![image](https://github.com/user-attachments/assets/1a32d79a-6aef-4113-8f8d-95c5fd2c8543)
 
 ### 2. Bimod prediction (`2-bit prediction`) using 2048 table entry size (default size)  
 using `2-bit-prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
