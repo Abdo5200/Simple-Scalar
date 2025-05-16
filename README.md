@@ -438,10 +438,11 @@ increasing table entry size => decreased mispredictions, increased hit predictio
 ### 4. 2lev (`correlating`) prediction using default value 1 register , 1024 entry table , 8 bits , 0 (`xor`)
 using `correlating prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
 
-![image](https://github.com/user-attachments/assets/6fba837b-4047-46e9-8843-e744fd95526f)
+![image](https://github.com/user-attachments/assets/233e2a67-70ea-4c54-8a39-0e45b1c8de93)
 
 
-### 5. 2lev (`correlating`) prediction using default value 1 register , 1024 entry table , 10 bits , 1 (`xor`)
+
+### 5. 2lev (`correlating`) prediction using 1 register , 1024 entry table , 10 bits , 1 (`xor`)
 increasing number of bit => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
 
 ![image](https://github.com/user-attachments/assets/bc966494-ab5e-4ea7-a28e-80605c125480)
