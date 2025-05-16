@@ -451,6 +451,3 @@ increasing number of bit => decreased mispredictions, increased hit predictions,
 the best perfomance and accuracy with inceased table entry size and increased bits.   
 
 ![image](https://github.com/user-attachments/assets/235c19ed-44c2-43dd-ae81-4cd270173331)
-
-
-![84df0701-95db-4b2e-94f0-c9753f0bb69f (1)](https://github.com/user-attachments/assets/2f8c5717-40d6-4b45-aa51-feb9597f6ad0)
