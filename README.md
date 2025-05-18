@@ -4,12 +4,12 @@
 - [🧰 Prerequisites](#-prerequisites)
 - [🖥️ Environment Setup](#-environment-setup)
 - [✏️ Simulation Code Implementation](#-simulation-code-implementation)
-- [🏁 Compile and Run](#command-used)
+- [🏁 Compile and Run](#-compile-and-run)
 - [🧪 Testing and Validation](#-testing-and-validation)
-- [🧩 Challenges Encountered and its solutions](#Problems-Encountered-and-Solutions)
+- [🧩 Challenges Encountered and its solutions](#-challenges-encountered-and-its-solutions)
 - [📝 Conclusion](#-conclusion)
 - [📌 References](#-references)
-- [👥 Contributors](#team-members)
+- [👥 Contributors](#-contributors)
 
 ## 💡 Acknowledgments
 This project was carried out under the supervision of Dr. May Mohamed, whose insightful feedback and constant encouragement were greatly appreciated as part of the ECE322C Computer Architecture course.
@@ -102,6 +102,7 @@ make install
 
 
 ## 🏁 Compile and Run
+
 To be able to compile the source C-file, first, we must to open the terminal in the `bin` folder inside the `SimpleScalar` folder then use this command:
 ```bash
 ~/compile-for-ss.sh test.c test.ss
@@ -152,7 +153,7 @@ the best perfomance and accuracy with inceased table entry size and increased bi
 ![image](https://github.com/user-attachments/assets/235c19ed-44c2-43dd-ae81-4cd270173331)
 
 
-## 🧩 Challenges Encountered
+## 🧩 Challenges Encountered and its solutions
 
 ### Problem 1: Architecture Compatibility Issues
 
