@@ -3,7 +3,7 @@
 - [🔍 Problem Description](#-problem-description)
 - [🧰 Prerequisites](#-prerequisites)
 - [🖥️ Environment Setup](#-environment-setup)
-- [✏️ Simulation Code Implementation](#-simulation-code-implementation)
+- [✏️ Simulation Code Implementation](#️-simulation-code-implementation)
 - [🏁 Compile and Run](#-compile-and-run)
 - [🧪 Testing and Validation](#-testing-and-validation)
 - [🧩 Challenges Encountered and its solutions](#-challenges-encountered-and-its-solutions)
