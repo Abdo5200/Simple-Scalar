@@ -2,7 +2,7 @@
 - [💡 Acknowledgement](#-acknowledgments)
 - [🔍 Problem Description](#-problem-description)
 - [🧰 Prerequisites](#-prerequisites)
-- [🖥️ Environment Setup](#-environment-setup)
+- [🖥 Environment Setup](#environment-setup)
 - [✏️ Simulation Code Implementation](#️-simulation-code-implementation)
 - [🏁 Compile and Run](#-compile-and-run)
 - [🧪 Testing and Validation](#-testing-and-validation)
@@ -65,7 +65,7 @@ Applications from the SPEC95 benchmark suite are used as input, each precompiled
   
 ---
 
-## 🖥️ Environment Setup
+## 🖥 Environment Setup
 
 ### 1. Download the SimpleScalar toolset:
 
