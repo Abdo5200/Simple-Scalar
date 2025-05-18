@@ -64,7 +64,7 @@ Applications from the SPEC95 benchmark suite are used as input, each precompiled
 - Basic knowledge of cross-compilation concepts
   
 
-## 🖥️ Environment Setup
+<h2 id="environment-setup">🖥️ Environment Setup</h2>
 
 ### 1. Download the SimpleScalar toolset:
 
