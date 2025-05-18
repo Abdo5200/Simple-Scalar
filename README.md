@@ -63,7 +63,6 @@ Applications from the SPEC95 benchmark suite are used as input, each precompiled
 - GCC version 2.7.2.3 (SimpleScalar-specific)
 - Basic knowledge of cross-compilation concepts
   
----
 
 ## 🖥️ Environment Setup
 
