@@ -1,30 +1,20 @@
 ## Table of Contents
-- [Course Name](#course-name)
-- [Acknowledgement](#acknowlegment)
-- [Team Members](#team-members)
-- [Problem Definition](#dynamic-branch-prediction-simulation)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Problems Encountered and solution](#Problems-Encountered-and-Solutions)
-- [Commands And Parameters Used](#command-used)
-- [Sample Output](#sample-output)  
+- [💡 Acknowledgement](#-acknowledgments)
+- [🔍 Problem Description](#-problem-description)
+- [🧰 Prerequisites](#-prerequisites)
+- [🖥️ Environment Setup](#-environment-setup)
+- [✏️ Simulation Code Implementation](#-simulation-code-implementation)
+- [🏁 Compile and Run](#command-used)
+- [🧪 Testing and Validation](#-testing-and-validation)
+- [🧩 Challenges Encountered and its solutions](#Problems-Encountered-and-Solutions)
+- [📝 Conclusion](#-conclusion)
+- [📌 References](#-references)
+- [👥 Contributors](#team-members)
 
-## Course Name 
-**ECE322C Computer Architecture**
+## 💡 Acknowledgments
+This project was carried out under the supervision of Dr. May Mohamed, whose insightful feedback and constant encouragement were greatly appreciated as part of the ECE322C Computer Architecture course.
 
-## Acknowledgment
-This project was carried out under the supervision of **Dr. May Mohamed**, whose insightful feedback and constant encouragement were greatly appreciated.
-
-## Team Members 
-1. **Abdelrahman Wahid Abdallah** 
-2. **Abdelrahman Mamdouh Mohamed** 
-3. **Ahmed Ragab**
-4. **Aya Mohamed Sayed** 
-5. **Shams Hesham** 
-
-## Dynamic Branch Prediction Simulation
-
-### Problem-Definition
+## 🔍 Problem Description
 
 This simulation explores the performance of various **dynamic branch prediction schemes** using the `sim-outorder` simulator from the **SimpleScalar toolset**. The goal is to develop a deeper understanding of how different prediction strategies impact processor performance, particularly in relation to control hazards in pipelines.
 
@@ -66,7 +56,7 @@ The simulation aims to analyze and compare these prediction strategies with resp
 
 Applications from the SPEC95 benchmark suite are used as input, each precompiled for the simulator.
 
-## Prerequisites
+## 🧰 Prerequisites
 
 - Unix-like operating system (Linux/macOS)
 - SimpleScalar base installation
@@ -75,7 +65,7 @@ Applications from the SPEC95 benchmark suite are used as input, each precompiled
   
 ---
 
-## Installation
+## 🖥️ Environment Setup
 
 ### 1. Download the SimpleScalar toolset:
 
@@ -99,7 +89,70 @@ make
 make install
 ```
 
-## Problems-Encountered-and-Solutions
+## ✏️ Simulation Code Implementation
+
+```bash
+./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred <`predictor type`> -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim 2levDef.txt ./tests-pisa/bin.little/test.ss
+```
+
+-predictor type         {`nottaken|taken|perfect|bimod|2lev|comb`}  
+-in case of `static prediction` it doesn't matter which parameter of the above is used  
+-bpred:bimod     `2048` # bimodal predictor (`2-bit predictor`) config (`<table size>`)  
+-bpred:2lev      `1 1024 8 0` # 2-level predictor (`correlating predictor`) config (`<no of registers> <table size> <hist_size> <xor>`)  
+
+
+## 🏁 Compile and Run
+To be able to compile the source C-file, first, we must to open the terminal in the `bin` folder inside the `SimpleScalar` folder then use this command:
+```bash
+~/compile-for-ss.sh test.c test.ss
+```
+where `~/compile-for-ss.sh` is a custom wrapper created to hide complex original command that used to compile the C-file.
+`test.c` is the source C-file we want to compile
+`test.ss` is the destination binary file we want to get to run the simultion 
+
+then we open the terminal in `simplesim-3.0` folder and run this command:
+
+```bash
+./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred <`predictor type`> -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim 2levDef.txt ./tests-pisa/bin.little/test.ss
+```
+
+## 🧪 Testing and Validation
+### 1. static prediction (`backward taken and forward not taken`) stats 
+
+![image](https://github.com/user-attachments/assets/1a32d79a-6aef-4113-8f8d-95c5fd2c8543)
+
+### 2. Bimod prediction (`2-bit prediction`) using 2048 table entry size (default size)  
+using `2-bit-prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
+
+![image](https://github.com/user-attachments/assets/a69c8e98-0612-4cac-9932-5f448933a989)
+
+
+### 3. Bimod (`2-bit prediction`) Prediction using 16384 table entry size
+increasing table entry size => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
+
+![image](https://github.com/user-attachments/assets/43f5b8c9-9825-480a-8580-5a355a5103ec)
+
+
+### 4. 2lev (`correlating`) prediction using default value 1 register , 1024 entry table , 8 bits , 0 (`xor`)
+using `correlating prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
+
+![image](https://github.com/user-attachments/assets/233e2a67-70ea-4c54-8a39-0e45b1c8de93)
+
+
+
+### 5. 2lev (`correlating`) prediction using 1 register , 1024 entry table , 10 bits , 1 (`xor`)
+increasing number of bit => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
+
+![image](https://github.com/user-attachments/assets/bc966494-ab5e-4ea7-a28e-80605c125480)
+
+
+### 6. 2lev (`correlating`) prediction using 1 register , 4096 entry table , 11 bits , 1 (`xor`)
+the best perfomance and accuracy with inceased table entry size and increased bits.   
+
+![image](https://github.com/user-attachments/assets/235c19ed-44c2-43dd-ae81-4cd270173331)
+
+
+## 🧩 Challenges Encountered
 
 ### Problem 1: Architecture Compatibility Issues
 
@@ -405,50 +458,24 @@ stat_reg_counter(sdb, "committed_backward_taken", "number of committed backward 
 stat_reg_counter(sdb, "committed_backward_not_taken", "number of committed backward branches that were not taken", &committed_backward_not_taken, 0, NULL);
 ```
 
-## Command Used 
+## 📝 Conclusion
+Our simulation demonstrates the clear performance advantages of sophisticated branch prediction schemes:
 
-```bash
-./sim-outorder -fetch:ifqsize 1 -decode:width 1 -issue:width 1 -issue:inorder true -res:ialu 1 -res:imult 1 -res:memport 1 -res:fpalu 1 -res:fpmult 1 -bpred <`predictor type`> -cache:dl1 dl1:128:32:2:l -cache:il1 il1:128:32:2:l -cache:dl2 ul2:8192:32:1:l -tlb:itlb itlb:16:4096:4:l -tlb:dtlb dtlb:16:4096:8:l -redir:sim 2levDef.txt ./tests-pisa/bin.little/test.ss
-```
-### parameters
-
--predictor type         {`nottaken|taken|perfect|bimod|2lev|comb`}  
--in case of `static prediction` it doesn't matter which parameter of the above is used  
--bpred:bimod     `2048` # bimodal predictor (`2-bit predictor`) config (`<table size>`)  
--bpred:2lev      `1 1024 8 0` # 2-level predictor (`correlating predictor`) config (`<no of registers> <table size> <hist_size> <xor>`)  
-
-## Sample Output 
-
-### 1. static prediction (`backward taken and forward not taken`) stats 
-
-![image](https://github.com/user-attachments/assets/1a32d79a-6aef-4113-8f8d-95c5fd2c8543)
-
-### 2. Bimod prediction (`2-bit prediction`) using 2048 table entry size (default size)  
-using `2-bit-prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
-
-![image](https://github.com/user-attachments/assets/a69c8e98-0612-4cac-9932-5f448933a989)
+1. Static prediction provides a baseline but limited accuracy
+2. 2-bit prediction significantly improves performance, with larger tables yielding better results
+3. Correlating predictors offer the best performance, particularly with increased history bits
+These results confirm the importance of effective branch prediction in modern processor design, especially as pipeline depths increase and branch misprediction penalties grow more severe.
 
 
-### 3. Bimod (`2-bit prediction`) Prediction using 16384 table entry size
-increasing table entry size => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
-
-![image](https://github.com/user-attachments/assets/43f5b8c9-9825-480a-8580-5a355a5103ec)
-
-
-### 4. 2lev (`correlating`) prediction using default value 1 register , 1024 entry table , 8 bits , 0 (`xor`)
-using `correlating prediction` => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
-
-![image](https://github.com/user-attachments/assets/233e2a67-70ea-4c54-8a39-0e45b1c8de93)
+## 📌 References
+SimpleScalar toolset documentation
+Computer Architecture.1 6th ed
+stackoverflow 
 
 
-
-### 5. 2lev (`correlating`) prediction using 1 register , 1024 entry table , 10 bits , 1 (`xor`)
-increasing number of bit => decreased mispredictions, increased hit predictions, increased accuracy, increased performance than the previous sample output. 
-
-![image](https://github.com/user-attachments/assets/bc966494-ab5e-4ea7-a28e-80605c125480)
-
-
-### 6. 2lev (`correlating`) prediction using 1 register , 4096 entry table , 11 bits , 1 (`xor`)
-the best perfomance and accuracy with inceased table entry size and increased bits.   
-
-![image](https://github.com/user-attachments/assets/235c19ed-44c2-43dd-ae81-4cd270173331)
+## 👥 Contributors
+1. **Abdelrahman Wahid Abdallah** 
+2. **Abdelrahman Mamdouh Mohamed** 
+3. **Ahmed Ragab**
+4. **Aya Mohamed Sayed** 
+5. **Shams Hesham** 
