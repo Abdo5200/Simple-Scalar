@@ -2,7 +2,7 @@
 - [💡 Acknowledgement](#-acknowledgments)
 - [🔍 Problem Description](#-problem-description)
 - [🧰 Prerequisites](#-prerequisites)
-- [🖥️ Environment Setup](#-environment-setup)
+- [🖥️ Environment Setup](#8F-environment-setup)
 - [✏️ Simulation Code Implementation](#️-simulation-code-implementation)
 - [🏁 Compile and Run](#-compile-and-run)
 - [🧪 Testing and Validation](#-testing-and-validation)
