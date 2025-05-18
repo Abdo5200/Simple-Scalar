@@ -468,9 +468,9 @@ These results confirm the importance of effective branch prediction in modern pr
 
 
 ## 📌 References
-SimpleScalar toolset documentation
-Computer Architecture.1 6th ed
-stackoverflow 
+SimpleScalar toolset documentation  
+Computer Architecture.1 6th ed  
+stackoverflow   
 
 
 ## 👥 Contributors
