@@ -58,7 +58,7 @@ Applications from the SPEC95 benchmark suite are used as input, each precompiled
 
 ## 🧰 Prerequisites
 
-- Unix-like operating system (Linux/macOS)
+- Unix-like operating system (Linux/macOS)[all tests are done on linux mint with cinnamon]
 - SimpleScalar base installation
 - GCC version 2.7.2.3 (SimpleScalar-specific)
 - Basic knowledge of cross-compilation concepts
@@ -101,7 +101,8 @@ make install
 
 
 ## 🏁 Compile and Run
-
+###Disclamir
+all codes and might not run or change slightly based on your distro. these commands are done with linux mint with cinnamon
 To be able to compile the source C-file, first, we must to open the terminal in the `bin` folder inside the `SimpleScalar` folder then use this command:
 ```bash
 ~/compile-for-ss.sh test.c test.ss
